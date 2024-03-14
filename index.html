@@ -4,21 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Madimi+One&family=Ojuju:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>IP Cheker</title>
   </head>
   <body>
     <h1 class="title">IP Cheker</h1>
     <div class="wrapper">
       <span class="error"></span>
       <div class="input-container">
-        <input
-          id="search"
-          name="search"
-          type="text"
-          placeholder="___.___.___.___"
-        />
+        <input id="search" class="search" type="text" />
 
-        <button>Search</button>
+        <button class="button">Search</button>
       </div>
     </div>
     <div id="map" class="map"></div>

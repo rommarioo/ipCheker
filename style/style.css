@@ -2,6 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 body {
   height: 100vh;
@@ -9,7 +13,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(
+    141deg,
+    rgb(20 16 242 / 53%) 50%,
+    #1ac19a 100%,
+    rgb(147 94 43) 100%
+  );
 }
 .wrapper {
   display: flex;
@@ -25,8 +36,8 @@ body {
   width: 90vw;
   margin: 20px;
   opacity: 0;
-  transition: opacity 1s ease-out;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  transition: opacity 2s ease-out;
+  border-radius: 20px;
 }
 .marker {
   background-image: url("../images/marker.png");
@@ -37,8 +48,32 @@ body {
 }
 .title {
   margin-top: 30px;
+  text-shadow: 2px 1px 2px rgb(107, 107, 107);
+  font-size: 50px;
 }
 .error {
   opacity: 0;
   color: red;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+.search {
+  text-align: center;
+  padding-block: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1em;
+  border: 2px solid black;
+  outline: none;
+  transition: 1s;
+}
+.search:hover {
+}
+.button {
+  border: 2px solid black;
+  font-size: 1em;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

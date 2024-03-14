@@ -1,10 +1,12 @@
-const button = document.querySelector("button");
+const button = document.querySelector(".button");
 const input = document.querySelector("#search");
 const mapConteiner = document.querySelector(".map");
 const er = document.querySelector(".error");
 let x = 0;
 let y = 0;
 let map = null;
+
+getIpUser();
 
 input.addEventListener("input", function (e) {
   const reg = new RegExp("[^0-9+.]", "g");
@@ -29,9 +31,9 @@ async function initMap(x, y) {
       {
         location: {
           center: [x, y],
-
           zoom: 12,
         },
+        zoomRange: { min: 12, max: 13 },
       }
     );
 
@@ -40,11 +42,10 @@ async function initMap(x, y) {
     const marker = new YMapMarker(
       {
         coordinates: [x, y],
-        draggable: false,
       },
       content
     );
-
+    console.log(marker);
     map
       .addChild(new YMapDefaultSchemeLayer())
       .addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }))
@@ -52,13 +53,13 @@ async function initMap(x, y) {
 
     mapConteiner.style.opacity = 1;
   } catch (error) {
-    setTimeout(() => {
-      location.reload(true);
-    }, 1000);
+    // setTimeout(() => {
+    //   location.reload(true);
+    // }, 1000);
 
     input.value = "";
     er.style.opacity = 1;
-    er.textContent = "Incorrect adress (enter by type xxx.xxx.xxx.xxx)";
+    er.innerHTML = "Incorrect adress<br> (enter by type xxx.xxx.xxx.xxx)";
   }
 }
 function destroyMap() {
@@ -83,8 +84,14 @@ async function fetchIpLocation(addres) {
 
     input.value = "";
     er.style.opacity = 1;
-    er.textContent = "Incorrect adress ";
+    erinnerHTML = "Incorrect adress<br> (enter by type xxx.xxx.xxx.xxx)";
   }
+}
+async function getIpUser() {
+  const res = await fetch("https://ipapi.co/json/");
+  const userIp = await res.json();
+  input.placeholder = `Your IP: ${userIp.ip}`;
+  console.log(userIp.ip);
 }
 
 button.addEventListener("click", () => {
