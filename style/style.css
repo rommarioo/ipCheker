@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40vh;
+  align-items: center;
+  gap: 10px;
+}
+.map {
+  overflow: hidden;
+  height: 60vh;
+  width: 90vw;
+  margin: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+.marker {
+  background-image: url("../images/marker.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+.title {
+  margin-top: 30px;
+}
+.error {
+  opacity: 0;
+  color: red;
+}
