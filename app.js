@@ -44,7 +44,7 @@ async function initMap(x, y) {
       },
       content
     );
-    console.log(map);
+
     map
       .addChild(new YMapDefaultSchemeLayer())
       .addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }))
