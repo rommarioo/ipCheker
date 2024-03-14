@@ -70,10 +70,10 @@ function destroyMap() {
 
 async function fetchIpLocation(addres) {
   try {
-    const res = await fetch(`http://ip-api.com/json/${addres}`);
+    const res = await fetch(`https://ipapi.co/${addres}/json/`);
     const data = await res.json();
-    x = data.lon;
-    y = data.lat;
+    x = data.longitude;
+    y = data.latitude;
     console.log(data);
     initMap(x, y);
   } catch (error) {
