@@ -53,9 +53,9 @@ async function initMap(x, y) {
 
     mapConteiner.style.opacity = 1;
   } catch (error) {
-    // setTimeout(() => {
-    //   location.reload(true);
-    // }, 1000);
+    setTimeout(() => {
+      location.reload(true);
+    }, 1000);
 
     input.value = "";
     er.style.opacity = 1;
