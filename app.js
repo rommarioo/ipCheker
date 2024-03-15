@@ -24,7 +24,10 @@ async function initMap(x, y) {
       YMapDefaultFeaturesLayer,
     } = ymaps3;
     er.style.opacity = 0;
-    button.textContent = "Delete map";
+
+    if (map) {
+      destroyMap();
+    }
     map = new YMap(
       document.querySelector("#map"),
 
@@ -66,7 +69,6 @@ function destroyMap() {
   map.destroy();
   map = null;
   mapConteiner.style.opacity = 0;
-  button.textContent = "Search ";
 }
 
 async function fetchIpLocation(addres) {
@@ -95,10 +97,6 @@ async function getIpUser() {
 }
 
 button.addEventListener("click", () => {
-  if (!map) {
-    const value = input.value;
-    fetchIpLocation(value);
-  } else {
-    destroyMap();
-  }
+  const value = input.value;
+  fetchIpLocation(value);
 });
